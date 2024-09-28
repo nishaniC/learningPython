@@ -1,5 +1,4 @@
 def bmi(weight, height):
-    # if (((isinstance(weight,int) or isinstance(weight,float))and (isinstance(height,int) or isinstance(height,float))):
     if ((isinstance(weight,int)or isinstance(weight,float))and (isinstance(height,int) or isinstance(height,float))):
         if((weight>0) and (height>0)):
             return weight / height ** 2
