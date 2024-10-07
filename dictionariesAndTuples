@@ -14,6 +14,24 @@ for element in tup:
 print("duplicates: ",duplicates )    # outputs: 4
 print("nonduplicates: ",noduplicates)
 
+# glues two dictionaries
+d1 = {'Adam Smith': 'A', 'Judy Paxton': 'B+'}
+d2 = {'Mary Louis': 'A', 'Patrick White': 'C'}
+d3 = {}
+
+for item in (d1, d2):
+    d3.update(item)
+print(d3)
+
+# glues two tuples
+d1 = ('Adam Smith', 'A', 'Judy Paxton', 'B+')
+d2 = ('Mary Louis', 'A', 'Patrick White', 'C')
+d3 = ()
+
+for item in (d1, d2):
+    d3+=item
+
+print(d3)
 
 school_class = {}
 
