@@ -33,6 +33,15 @@ for item in (d1, d2):
 
 print(d3)
 
+colors = (("green", "#008000"), ("blue", "#0000FF"))
+
+# Write your code here.
+colors_dictionary={}
+for item in colors:
+    colors_dictionary.update({item[0]:item[1]})
+
+print(colors_dictionary)
+
 school_class = {}
 
 while True:
