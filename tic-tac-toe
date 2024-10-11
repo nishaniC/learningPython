@@ -58,10 +58,8 @@ def draw_move(board):
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
     # checks the input, and updates the board according to the user's decision.
-    free=[]
-    free=make_list_of_free_fields(board)
     valueAssigned = False
-    if (len(free)!=0):
+    if (len(make_list_of_free_fields(board))!=0):
         try:
             value=int(input("Please enter your move: "))
             if (value in[1,2,3,4,5,6,7,8,9]):
@@ -77,7 +75,7 @@ def enter_move(board):
             else:
                 print("incorrect move please try again")
                 enter_move(board)
-            if ((len(free)!=0)):
+            if ((len(make_list_of_free_fields(board))!=0)):
                 draw_move(board)
                 enter_move(board)
         except:
