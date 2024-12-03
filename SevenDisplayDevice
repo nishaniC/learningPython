@@ -1,0 +1,31 @@
+one = "#\n#\n#\n#\n#"
+two="###\n  #\n###\n#  \n###"
+three = "###\n  #\n###\n  #\n###"
+four = "# #\n# #\n###\n  #\n  #"
+five = "###\n#  \n###\n  #\n###"
+six = "###\n#  \n###\n# #\n###"
+seven = "###\n  #\n  #\n  #\n  #"
+eight = "###\n# #\n###\n# #\n###"
+nine = "###\n# #\n###\n  #\n###"
+zero = "###\n# #\n# #\n# #\n###"
+
+patterns = [zero,one,two,three,four,five,six,seven,eight,nine]
+ 
+# print(patterns[0],patterns[1])
+# print(patterns[1],"\n")
+# print(patterns[2],"\n")
+# print(patterns[3],"\n")
+# print(patterns[4],"\n")
+# print(patterns[5],"\n")
+# print(patterns[6],"\n")
+# print(patterns[7],"\n")
+# print(patterns[8],"\n")
+# print(patterns[9],"\n")
+
+pattern = []
+customerInput = input("please input the numbers you want printed in a seven-display device: ")
+for ch in customerInput:
+    number = int(ch)
+    pattern.append(patterns[number])
+    
+print (pattern)
