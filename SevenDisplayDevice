@@ -43,11 +43,13 @@ representations = {
     '9': ('###', '# #', '###', '  #', '###'),
     '.': ('   ', '   ', '   ', '   ', '  #'),
 }
+print("representations: ", representations, "\n")
 
 def seven_segment(number):
     # treat the number as a string, since that makes it easier to deal with
     # on a digit-by-digit basis
     digits = [representations[digit] for digit in number]
+    print("digits: ", digits, "\n")
     # now digits is a list of 5-tuples, each representing a digit in the given number
     # We'll print the first lines of each digit, the second lines of each digit, etc.
     for i in range(5):
