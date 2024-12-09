@@ -11,10 +11,10 @@ for char in text:
         cipher += char
         continue
     code = ord(char) + shifti
-    if code > ord('Z')+shifti:
-        code = ord('A')+shifti
-    if code > ord('z')+shifti:
-        code = ord('a')+shifti
+    if ((code > ord('Z'))and(char.isupper())):
+        code = ord('A')+(code-ord('Z')-1)
+    if ((code > ord('z'))and(char.islower())):
+        code = ord('a')+(code-ord('z')-1)
     cipher += chr(code)
 
 print(cipher)
