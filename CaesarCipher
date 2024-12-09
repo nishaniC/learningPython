@@ -1,0 +1,25 @@
+# Caesar cipher.
+text = input("Enter your message: ")
+cipher = ''
+shift = " "
+while (not(shift.isdigit()) ):
+    shift = input("Please enter the shift; it has to be a whole number from the range 1-25 inclusive: ")
+
+shifti = int(shift)
+for char in text:
+    if not char.isalpha():
+        cipher += char
+        continue
+    code = ord(char) + shifti
+    if code > ord('Z')+shifti:
+        code = ord('A')+shifti
+    if code > ord('z')+shifti:
+        code = ord('a')+shifti
+    cipher += chr(code)
+
+print(cipher)
+
+
+
+
+
