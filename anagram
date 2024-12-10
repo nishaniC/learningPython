@@ -1,0 +1,45 @@
+# anagram 
+index = -1
+text=" "
+while (text.isspace()):
+    text = input("Please Enter text1, it shouldn't be only spaces or empty: ")
+text1 = text.strip()
+lenght1 = len(text2)
+while (text.isspace()):
+    text = input("Please Enter text2, it shouldn't be only spaces or empty: ")
+text2 = text.strip()
+lenght2 = len(text2)
+
+anagram=False
+if ((lenght2!=lenght1) and((" " is in text1)or(" " is in text2))):
+    if ((text1[0]=="/n")or(text2[0]=="/n")):
+        print("They are empty lines not anagrams")
+    else:
+    
+else:
+    print("They vary in lenght and do not include spaces so they are not anagrams")
+else:
+    for char in text:
+        if char.isspace():
+            lenght-=1
+            print("lenght: ",lenght)
+            continue
+        char = char.upper()
+        print("Char: ",char)
+        while( text[index].isspace()):
+            index-=1
+        if(-index<(lenght/2)):
+            if(char==(text[index].upper())):
+                print("char: ",char, "text[", index,"]: ", text[index])
+                index-=1
+                palindrome=True
+                continue
+            else:
+                print("It's not a palindrome 2 ") 
+                break
+        else:
+            break
+    if (palindrome):
+        print("It's a palindrome")
+    elif(index!=-1):
+        print("It's not a palindrome 3")
