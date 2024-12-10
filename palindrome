@@ -1,0 +1,30 @@
+
+index = -1
+while (text.isspace()):
+    text = input("Please Enter your message, it shouldn't be only spces or empty: ")
+text = text.strip()
+lenght = len(text)
+
+palindrome=False
+if lenght<=1:
+    print("It's not a palindrome")
+else:
+    for char in text:
+        if char.isspace():
+            lenght-=1
+            continue
+        char = char.upper()
+        if(-index<(lenght/2):
+            if (char==(text[index].upper())):
+                index-=1
+                palindrome=True
+                continue
+            else:
+                print("It's not a palindrome") 
+                break
+        else:
+            break
+    if (palindrome):
+        print("It's a palindrome")
+    elif(index!=-1):
+        print("It's not a palindrome")
