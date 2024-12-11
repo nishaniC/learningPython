@@ -1,4 +1,4 @@
-# anagram 
+# anagrams 
 
 text1=" "
 while (text1.isspace()):
