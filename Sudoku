@@ -12,7 +12,15 @@ ColumnS=False
 tileS=False
 SudokuR=[]
 SudokuC=[]
-SudokuT=[]
+SudokuT1=[]
+SudokuT2=[]
+SudokuT3=[]
+SudokuT4=[]
+SudokuT5=[]
+SudokuT6=[]
+SudokuT7=[]
+SudokuT8=[]
+SudokuT9=[]
 equals=0
 SetIndex=-1
 set=['1','2','3','4','5','6','7','8','9']
@@ -66,11 +74,15 @@ if(rawS):
         for i in range(0,81):
             print("i: ", i)
             if (i<3):
-                SudokuT.append(Sudoku[i])
+                SudokuT1.append(Sudoku[i])
+            if((i>2)and(i<6))
+                SudokuT2.append(Sudoku[i])
+            if((i>5)and(i<9))
+                SudokuT3.append(Sudoku[i])
             if((i>8)and(i<12)):
-                SudokuT.append(Sudoku[i])
+                SudokuT1.append(Sudoku[i])
             if((i>17) and(i<21)):
-                SudokuT.append(Sudoku[i])
+                SudokuT1.append(Sudoku[i])
             if(i==21):    
                 break
         print("SudokuT : ", SudokuT)
