@@ -1,0 +1,37 @@
+# Sudoku 
+# reads 9 rows, each row of the board must contain all digits from 0 to 9 
+# reads 9colums, each column of the board must contain all digits from 0 to 9
+# each of the nine 3x3 "tiles" of the table must contain all digits from 0 to 9
+# userInput = input("please enter the Sudoku to verify: ")
+userInput="195743862431865927876192543387459216612387495549216738763524189928671354254938671"
+Sudoku = list(userInput)
+print("Sudoku :", Sudoku)
+rawS=False
+SudokuR=[]
+equals=0
+SetIndex=-1
+set=['1','2','3','4','5','6','7','8','9']
+print("set :", set)
+# breaking down into lists of:
+# raws
+for i in range(0,81,9):
+    print("i: ", i)
+    SudokuR=Sudoku[i:i+9]
+    print("SudokuR : ", SudokuR)
+    for j in range(0,9):
+        if (SudokuR[j]in set):
+            SetIndex = int(SudokuR[j])-1
+            set[SetIndex]+="Y"
+            equals+=1
+        else:
+            break
+            
+    print("set :", set)
+    print("equals :", equals)
+    set=['1','2','3','4','5','6','7','8','9']
+    print("set :", set)
+    if(equals!=9):
+        break
+    equals=0
+    
+    # SudokuR.append(Sudoku[1])
