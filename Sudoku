@@ -3,7 +3,7 @@
 # reads 9colums, each column of the board must contain all digits from 0 to 9
 # each of the nine 3x3 "tiles" of the table must contain all digits from 0 to 9
 # userInput = input("please enter the Sudoku to verify: ")
-userInput="195743862431865927876192543387459216612387495549216738763524189928671354254938671"
+userInput="295743861431865927876192543387459216612387495549216738763524189928671354154938672"
 # userInput="195743862431865927876192543387459216612387495549216738763524189928671354254938671"
 Sudoku = list(userInput)
 print("Sudoku :", Sudoku)
@@ -58,15 +58,22 @@ if(rawS):
         print("set :", set)
         if((equals%9)!=0):
             break
-        if(equals==81):
+        if(equals==162):
             ColumnS=True
     if (ColumnS):
         print("columns are ok continuing to check the tiles")
         set=['1','2','3','4','5','6','7','8','9']
-        for i in range(0,81,9):
+        for i in range(0,81):
             print("i: ", i)
-            SudokuT=Sudoku[i::9]
-            print("SudokuC : ", SudokuC)
+            if (i<3):
+                SudokuT.append(Sudoku[i])
+            if((i>8)and(i<12)):
+                SudokuT.append(Sudoku[i])
+            if((i>17) and(i<21)):
+                SudokuT.append(Sudoku[i])
+            if(i==21):    
+                break
+        print("SudokuT : ", SudokuT)
             # for j in range(0,9):
             #     if (SudokuC[j]in set):
             #         SetIndex = int(SudokuC[j])-1
