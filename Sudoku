@@ -8,7 +8,11 @@ userInput="195743862431865927876192543387459216612387495549216738763524189928671
 Sudoku = list(userInput)
 print("Sudoku :", Sudoku)
 rawS=False
+ColumnS=False
+tileS=False
 SudokuR=[]
+SudokuC=[]
+SudokuT=[]
 equals=0
 SetIndex=-1
 set=['1','2','3','4','5','6','7','8','9']
@@ -35,15 +39,15 @@ for i in range(0,81,9):
     if(equals==81):
         rawS=True
 if(rawS):
-    print("continue")
-    # raws
+    print("raws are ok so continuing to check the columns")
+    set=['1','2','3','4','5','6','7','8','9']
     for i in range(0,9):
         print("i: ", i)
         SudokuC=Sudoku[i::9]
         print("SudokuC : ", SudokuC)
         for j in range(0,9):
-            if (SudokuR[j]in set):
-                SetIndex = int(SudokuR[j])-1
+            if (SudokuC[j]in set):
+                SetIndex = int(SudokuC[j])-1
                 set[SetIndex]+="Y"
                 equals+=1
             else:
@@ -55,7 +59,34 @@ if(rawS):
         if((equals%9)!=0):
             break
         if(equals==81):
-            rawS=True
+            ColumnS=True
+    if (ColumnS):
+        print("columns are ok continuing to check the tiles")
+        set=['1','2','3','4','5','6','7','8','9']
+        for i in range(0,81,9):
+            print("i: ", i)
+            SudokuT=Sudoku[i::9]
+            print("SudokuC : ", SudokuC)
+            # for j in range(0,9):
+            #     if (SudokuC[j]in set):
+            #         SetIndex = int(SudokuC[j])-1
+            #         set[SetIndex]+="Y"
+            #         equals+=1
+            #     else:
+            #         break
+            # print("set :", set)
+            # print("equals :", equals)
+            # set=['1','2','3','4','5','6','7','8','9']
+            # print("set :", set)
+            # if((equals%9)!=0):
+            #     break
+            # if(equals==81):
+            #     tileS=True
+            #     print("It is a Sudoku")
+    else:
+        print("columns are not a Sudoku no need to continue")
+        
+        
     
 else:
     print("raws are not a Sudoku no need to continue")
