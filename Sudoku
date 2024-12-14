@@ -27,6 +27,20 @@ set=['1','2','3','4','5','6','7','8','9']
 print("set :", set)
 # breaking down into lists of:
 # raws
+
+def brakeIntoTiles(start,end):
+    SudokuTM1=[]
+    for i in range(start,end+1):
+        # print("i: ", i)
+        if ((i>=start)and(i<=start+2)):
+            SudokuTM1.append(Sudoku[i])
+        if((i>=start+7)and(i<=start+11)):
+            SudokuTM1.append(Sudoku[i])
+        if((i>=start+18)and(i<=start+20)):
+            SudokuTM1.append(Sudoku[i])
+    print("SudokuTM1 : ", SudokuTM1)
+    return SudokuTM1
+
 for i in range(0,81,9):
     print("i: ", i)
     SudokuR=Sudoku[i:i+9]
@@ -72,68 +86,10 @@ if(rawS):
         print("columns are ok continuing to check the tiles")
         set=['1','2','3','4','5','6','7','8','9']
         
-def brakeIntoTiles(start,end):
-    for i in range(start,end):
-        # print("i: ", i)
-        if ((i>start)and(i<6)):
-            SudokuT1.append(Sudoku[i])
-        if((i>2)and(i<6)):
-            SudokuT2.append(Sudoku[i])
-        if((i>5)and(i<9)):
-            SudokuT3.append(Sudoku[i])
-        if((i>8)and(i<12)):
-            SudokuT1.append(Sudoku[i])
-        if((i>11) and(i<15)):
-            SudokuT2.append(Sudoku[i])
-        if((i>14)and(i<18)):
-            SudokuT3.append(Sudoku[i])
-        if((i>17)and(i<21)):
-            SudokuT1.append(Sudoku[i])
-        if((i>20)and(i<24)):
-            SudokuT2.append(Sudoku[i])
-        if((i>23)and(i<27)):
-            SudokuT3.append(Sudoku[i])
-            
-            if((i>26)and(i<30)):
-                SudokuT4.append(Sudoku[i])
-            if((i>29)and(i<33)):
-                SudokuT5.append(Sudoku[i])
-            if((i>32)and(i<36)):
-                SudokuT6.append(Sudoku[i])
-            if((i>35)and(i<39)):
-                SudokuT4.append(Sudoku[i])
-            if((i>38) and(i<42)):
-                SudokuT5.append(Sudoku[i])
-            if((i>41)and(i<45)):
-                SudokuT6.append(Sudoku[i])
-            if((i>44)and(i<48)):
-                SudokuT4.append(Sudoku[i])
-            if((i>47)and(i<51)):
-                SudokuT5.append(Sudoku[i])
-            if((i>50)and(i<54)):
-                SudokuT6.append(Sudoku[i])
-            
-            if((i>53)and(i<57)):
-                SudokuT7.append(Sudoku[i])
-            if((i>56)and(i<60)):
-                SudokuT8.append(Sudoku[i])
-            if((i>59)and(i<63)):
-                SudokuT9.append(Sudoku[i])
-            if((i>62)and(i<66)):
-                SudokuT7.append(Sudoku[i])
-            if((i>65) and(i<69)):
-                SudokuT8.append(Sudoku[i])
-            if((i>68)and(i<72)):
-                SudokuT9.append(Sudoku[i])
-            if((i>71)and(i<75)):
-                SudokuT7.append(Sudoku[i])
-            if((i>74)and(i<78)):
-                SudokuT8.append(Sudoku[i])
-            if((i>77)and(i<81)):
-                SudokuT9.append(Sudoku[i])    
-            
-                
-        # print("SudokuT1 : ", SudokuT1)
+
+    
+    
+    
         # print("SudokuT2 : ", SudokuT2)
         # print("SudokuT3 : ", SudokuT3)
         # print("SudokuT4 : ", SudokuT4)
@@ -142,6 +98,10 @@ def brakeIntoTiles(start,end):
         # print("SudokuT7 : ", SudokuT7)
         # print("SudokuT8 : ", SudokuT8)
         # print("SudokuT9 : ", SudokuT9)
+       
+       
+       
+       
         for j in range(0,9):
             if (SudokuT1[j]in set):
                 SetIndex = int(SudokuT1[j])-1
