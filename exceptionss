@@ -1,8 +1,15 @@
 def read_int(prompt, min, max):
+    value=input(prompt)
     try:
-    value=int(input(prompt))
+        value=int(value)
+        assert value<=max and value>=min
+        return value
     except ValueError:
         print("Error: wrong input")
+        read_int(prompt, min, max)
+    except AssertionError:
+        print("Error: the value is not within permitted range /(",min,"..",max,"/)")
+        read_int(prompt, min, max)
         
 
 
