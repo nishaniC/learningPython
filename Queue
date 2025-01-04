@@ -1,0 +1,36 @@
+class QueueError(IndexError ):  # Choose base class for the new exception.
+    def __init__(self):
+        IndexError.__init__(self)
+        # print("Queue error")
+
+
+class Queue:
+    def __init__(self):
+        self.__queue=[]
+
+    def put(self, elem):
+        self.__queue.append(elem)
+
+    def get(self):
+        try:
+            vlaue=self.__queue[0]
+            del self.__queue[0]
+            return vlaue
+        except:
+            object_QueueError = QueueError()
+            raise object_QueueError
+        
+
+
+que = Queue()
+que.put(1)
+que.put("dog")
+que.put(False)
+# for i in range(4):
+#     print(que.get())
+
+try:
+    for i in range(4):
+        print(que.get())
+except :
+    print("Queue error")
