@@ -38,7 +38,7 @@ except :
 
 
 
-#this is not working
+#checks empty before getting
 class QueueError(IndexError):
     pass
 
@@ -67,14 +67,15 @@ class SuperQueue(Queue):
         self.__empty=False
         Queue.put(self,elem)
         
-    def get(self):
-        try:
-            itemget=Queue.get(self)
-            return itemget
-        except:
-            self.__empty=True
-            
+    # def get(self):
+    #     if (len(self.queue) == 1):
+    #         self.__empty=True
+    #     itemget=Queue.get(self)
+    #     return itemget
+        
     def isempty(self):
+        if (len(self.queue) == 0):
+            self.__empty=True
         return self.__empty
         
 
