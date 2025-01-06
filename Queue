@@ -34,3 +34,57 @@ try:
         print(que.get())
 except :
     print("Queue error")
+
+
+
+
+#this is not working
+class QueueError(IndexError):
+    pass
+
+
+class Queue:
+    def __init__(self):
+        self.queue = []
+    def put(self,elem):
+        self.queue.insert(0,elem)
+    def get(self):
+        if len(self.queue) > 0:
+            elem = self.queue[-1]
+            del self.queue[-1]
+            return elem
+        else:
+            raise QueueError
+
+
+
+class SuperQueue(Queue):
+    def __init__(self):
+        Queue.__init__(self)
+        self.__empty=True
+        
+    def put(self,elem):
+        self.__empty=False
+        Queue.put(self,elem)
+        
+    def get(self):
+        try:
+            itemget=Queue.get(self)
+            return itemget
+        except:
+            self.__empty=True
+            
+    def isempty(self):
+        return self.__empty
+        
+
+que = SuperQueue()
+que.put(1)
+que.put("dog")
+que.put(False)
+for i in range(4):
+    if not que.isempty():
+        print(que.get())
+    else:
+        print("Queue empty")
+
