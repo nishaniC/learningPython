@@ -39,19 +39,20 @@ except :
 
 
 #checks empty before getting
+#checks empty before getting
 class QueueError(IndexError):
     pass
 
 
 class Queue:
     def __init__(self):
-        self.queue = []
+        self.__queue = []
     def put(self,elem):
-        self.queue.insert(0,elem)
+        self.__queue.insert(0,elem)
     def get(self):
-        if len(self.queue) > 0:
-            elem = self.queue[-1]
-            del self.queue[-1]
+        if len(self.__queue) > 0:
+            elem = self.__queue[-1]
+            del self.__queue[-1]
             return elem
         else:
             raise QueueError
@@ -66,15 +67,9 @@ class SuperQueue(Queue):
     def put(self,elem):
         self.__empty=False
         Queue.put(self,elem)
-        
-    # def get(self):
-    #     if (len(self.queue) == 1):
-    #         self.__empty=True
-    #     itemget=Queue.get(self)
-    #     return itemget
-        
+
     def isempty(self):
-        if (len(self.queue) == 0):
+        if (len(self._Queue__queue) == 0):
             self.__empty=True
         return self.__empty
         
@@ -88,4 +83,3 @@ for i in range(4):
         print(que.get())
     else:
         print("Queue empty")
-
