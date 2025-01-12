@@ -10,10 +10,11 @@ class Weeker:
 
     def __init__(self, day):
         day=day.capitalize()
-        if day == "Mon":
+        if day in {"Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}
+            self.__day=day
+        else:
+            raise WeekDayError 
             
-        
-
     def __str__(self):
         return f"{self.__day}"
 
