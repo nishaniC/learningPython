@@ -13,7 +13,7 @@ class Point:
         return self.__y
 
     def distance_from_xy(self, x, y):
-        return (math.hypot(self.__x,self.__y)-math.hypot(0,0))-(math.hypot(x,y)-math.hypot(0,0))
+        return math.hypot(x,y)-math.hypot(self.__x,self.__y)
 
     def distance_from_point(self, point):
         return math.hypot(point.getx(),point.gety())-math.hypot(self.__x,self.__y)
@@ -22,4 +22,4 @@ class Point:
 point1 = Point(0, 0)
 point2 = Point(1, 1)
 print(point1.distance_from_point(point2))
-print(point2.distance_from_xy(0, 0))
+print(point2.distance_from_xy(2, 0))
