@@ -23,13 +23,7 @@ class Point:
             y=y-self.__y
             
         return math.hypot(x,y)
-        # Square the first side, a.
-# Add the square of the second side, b to it.
-# Subtract the square of the third side, c from the sum.
-# Divide the difference by the length of second side.
-# Divide the quotient by the length of first side.
-
-
+        
     def distance_from_point(self, point):
         if self.__x>point.getx():
             x=self.__x-point.getx()
