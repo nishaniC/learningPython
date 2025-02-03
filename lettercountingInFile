@@ -1,0 +1,25 @@
+srcname = input("Enter the source file name: ")
+try:
+    src = open(srcname, 'rt')
+except IOError as e:
+    print("Cannot open the source file: ", strerror(e.errno))
+    exit(e.errno)	
+
+indexList= {}
+try:
+    readin = src.readline()
+    while readin:
+        for ch in readin:
+            ch = ch.lower()
+            if ch in indexList:
+               indexList[ch]= indexList.get(ch)+1
+            else:
+                indexList[ch]=1    
+        readin = src.readline()
+    src.close()   
+except IOError as e:
+    print("Cannot read the file: ", strerror(e.errno))
+    src.close()
+    exit(e.errno)	
+for key in sorted(indexList.keys()):
+        print(key," -> ",indexList[key] )
