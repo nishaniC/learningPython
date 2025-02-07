@@ -47,4 +47,9 @@ for (pz, ch) in [('calzone', 0), ('margherita', 110), ('mafia', 20)]:
     except PizzaError as pe:
         print(pe, ':', pe.pizza)
 
+#################################################################
+#To assign error numbers to your own exceptions in Python, you can:
 
+#Implement __str__ to control the display of exceptions.
+#Subclass your customized exception for your particular use cases.
+#Use additional class attributes to provide detail without needing to pass parameters
