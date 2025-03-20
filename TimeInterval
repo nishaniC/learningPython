@@ -1,0 +1,34 @@
+class TimeInterval:
+    def __init__(self, hours,mins,seconds):
+        if isinstance(hours, int):
+        
+            if ((hours <=23)and (hours >=0)):
+                self.hours=hours    
+            else:
+                raise ValueError("hours has to be greater than or equal to zero and less than or equal to 23")
+        else:
+                raise TypeError("hours has to be greater than or equal to zero and less than or equal to 23")
+
+        
+        if ((mins <=60)and (mins >=0)):
+            self.mins=mins    
+        else:
+            raise ValueError("mins has to be greater than or equal to zero and less than or equal to 60")
+
+        
+        if ((seconds <=60)and (seconds >=0)):
+            self.seconds=seconds    
+        else:
+            raise ValueError("seconds has to be greater than or equal to zero and less than or equal to 60")
+ 
+            
+        
+        
+    def __add__(self,other):
+        if ((self.tm <=60)and (other.tm <=60) and (self.tm >=0)and (other.tm >=0)):
+            
+        else:
+            raise ValueError("time interval has to be greater than or equal to zero and less than or equal to 60")
+ 
+            
+            
