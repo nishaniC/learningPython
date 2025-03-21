@@ -60,5 +60,25 @@ print(fti+sti)
 print(fti-sti)
 print(fti*2)
 
+class TimeInterval2(TimeInterval):
+    def __init__(self, hours,mins,seconds):
+        super().__init__(hours,mins,seconds)
+        
+    def __add__(self,other):
+        if isinstance(other, int):
+            other=super().convert(other)
+            return TimeInterval.__add__(self,other)
+        else:
+            return TimeInterval.__add__(self,other)
+            
+    def __sub__(self,other):
+        if isinstance(other, int):
+            other=super().convert(other)
+        return TimeInterval.__sub__(self,other)
+        
+            
+tti=TimeInterval2(21,58,50)
+print(tti+62)
+print(tti-62)
 
             
