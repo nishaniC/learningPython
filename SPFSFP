@@ -8,6 +8,9 @@ class Fax:
     def send(self):
         print("send() method from Fax class")
         
+    def prinT(self):
+        print("print() method from Fax class")
+        
 class MFD_SPF(Scanner,Printer,Fax):
     pass
     
