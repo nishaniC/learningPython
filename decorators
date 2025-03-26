@@ -1,0 +1,20 @@
+def time_dec(function):    
+    # import module responsible for time processing
+    from datetime import datetime
+    
+    # get current time using now() method
+    timestamp = datetime.now()
+    
+    # convert timestamp to human-readable string, following passed pattern:
+    string_timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
+    
+    print(string_timestamp)
+@time_dec    
+def add(num1,num2):
+    print(num1 + num2)
+# @time_dec
+def multiply(num1,num2):
+    print( num1 * num2)
+    
+    
+add(1,2)
