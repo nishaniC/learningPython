@@ -1,4 +1,5 @@
 from datetime import datetime
+
 def time_dec(function):    
     def internal_wrapper(*args):
         # get current time using now() method
@@ -13,12 +14,25 @@ def time_dec(function):
     return internal_wrapper
     
 @time_dec    
-def add(num1,num2):
-    print(num1," + ",num2," = ",num1 + num2)
+def add(*args):
+    pstring = ""
+    num=0
+    for i in args:
+        pstring += str(i)
+        pstring += " + "
+        num+=i
+    print(pstring," = ", num)
 @time_dec
-def multiply(num1,num2):
-    print(num1," * ",num2," = ", num1 * num2)
+def multiply(*args):
+    pstring = ""
+    num=1
+    for i in args:
+        pstring += str(i)
+        pstring += " * "
+        num*=i
+    print(pstring," = ", num)
     
-    
-add(1,2)
-multiply(1,2)
+# plus = time_dec(add)
+# plus(1,1)
+add(1,2,3,4)
+multiply(1,2,3,4)
