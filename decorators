@@ -9,12 +9,16 @@ def time_dec(function):
     string_timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
     
     print(string_timestamp)
+    return function
 @time_dec    
 def add(num1,num2):
     print(num1 + num2)
-# @time_dec
+@time_dec
 def multiply(num1,num2):
     print( num1 * num2)
     
     
 add(1,2)
+multiply(1,2)
+add(2,2)
+multiply(2,2)
