@@ -1,24 +1,24 @@
+from datetime import datetime
 def time_dec(function):    
-    # import module responsible for time processing
-    from datetime import datetime
+    def internal_wrapper(*args, **kwargs):
+        # get current time using now() method
+        timestamp = datetime.now()
+        # convert timestamp to human-readable string, following passed pattern:
+        string_timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
+        print('"{}" was called at "{}" with the following arguments:'.format(function.__name__,string_timestamp))
+        print('\t{}'.format(args))
+        function(*args, **kwargs)
+        
+
+    return internal_wrapper
     
-    # get current time using now() method
-    timestamp = datetime.now()
-    
-    # convert timestamp to human-readable string, following passed pattern:
-    string_timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
-    
-    print(string_timestamp)
-    return function
 @time_dec    
 def add(num1,num2):
-    print(num1 + num2)
+    print(num1," + ",num2," = ",num1 + num2)
 @time_dec
 def multiply(num1,num2):
-    print( num1 * num2)
+    print(num1," * ",num2," = ", num1 * num2)
     
     
 add(1,2)
 multiply(1,2)
-add(2,2)
-multiply(2,2)
