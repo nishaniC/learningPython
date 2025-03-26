@@ -1,13 +1,13 @@
 from datetime import datetime
 def time_dec(function):    
-    def internal_wrapper(*args, **kwargs):
+    def internal_wrapper(*args):
         # get current time using now() method
         timestamp = datetime.now()
         # convert timestamp to human-readable string, following passed pattern:
         string_timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
         print('"{}" was called at "{}" with the following arguments:'.format(function.__name__,string_timestamp))
         print('\t{}'.format(args))
-        function(*args, **kwargs)
+        function(*args)
         
 
     return internal_wrapper
