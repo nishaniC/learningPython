@@ -3,6 +3,12 @@ class luxuryWatch:
     
     def __init__(self):
         luxuryWatch.watches_created += 1
+        
+    def reduce(self,num):
+        return luxuryWatch.get_number_of_watches_created()- num
+    
+    def reduce2(self):
+        return self.reduce(10)
    
     @classmethod
     def engraving(cls, text):
@@ -13,7 +19,11 @@ class luxuryWatch:
             return _watch
         except:
             print("Engariving provided is incorrect")
-            
+     
+    @classmethod
+    def addto(cls, num):
+        return luxuryWatch.get_number_of_watches_created()+num
+        
     @classmethod
     def get_number_of_watches_created(cls):
         return luxuryWatch.watches_created
@@ -38,6 +48,11 @@ engravedWatch=luxuryWatch.engraving("WanniArachchigeNishaniErandikaChandrasiri1"
 print("after creating en engraved watch too, watches_created: ",luxuryWatch.get_number_of_watches_created())  
 engravedWatch2=luxuryWatch.engraving("foo@baz.com")
 print("after trying to create an incorrectly engraved watch: watches_created: ",luxuryWatch.get_number_of_watches_created())  
+print(luxuryWatch.addto(10))
+print(watch.reduce2())
+print(luxuryWatch.validateEngraving("WanniArachchigeNishaniErandikaChandrasiri"))
+        
+    
         
         
     
