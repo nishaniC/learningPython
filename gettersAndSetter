@@ -15,10 +15,10 @@ class Account:
     def AccNumber(self):
         return self.__AccNumber
         
-    @balance.setter
+    @AccNumber.setter
     def AccNumber(self, number):
         raise AccountError('Not possible to change  the acount number')
-            
+
     @balance.setter
     def balance(self, amount):
         if amount > 0:
@@ -40,7 +40,7 @@ class Account:
     def balance(self):
         if self.__balance == 0:
             print('It is good to remember to delete the account!')
-            self.__balance = None
+            self.__balance = 0
             self.__AccNumber = None
             
         else:
@@ -65,28 +65,12 @@ except AccountError as e:
      print('Trying to set AccNumber to AC33, result:', e)
 print('Current AccNumber:', our_tank.AccNumber)
 
+our_tank.deposit(1000000)
+print('Current balance:', our_tank.balance)
 
-# # let's try to set the current level to 21 units
-# # this should be rejected as the tank's capacity is 20 units
-# try:
-#     our_tank.level = 21
-# except TankError as e:
-#     print('Trying to set liquid level to 21 units, result:', e)
-
-# # similar example - let's try to add an additional 15 units
-# # this should be rejected as the total capacity is 20 units
-# try:
-#     our_tank.level += 15
-# except TankError as e:
-#     print('Trying to add an additional 15 units, result:', e)
-
-# # let's try to set the liquid level to a negative amount
-# # this should be rejected as it is senseless
-# try:
-#     our_tank.level = -3
-# except TankError as e:
-#     print('Trying to set liquid level to -3 units, result:', e)
-
-# print('Current liquid level:', our_tank.level)
-
-# del our_tank.level
+try:
+    del our_tank.balance
+except AccountError as e:
+     print('Trying to delete the account attribute containing a non-zero balance, result:', e)
+print('Current AccNumber:', our_tank.AccNumber)
+print('Current balance:', our_tank.balance)
