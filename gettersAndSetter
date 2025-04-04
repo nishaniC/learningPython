@@ -1,0 +1,83 @@
+class AccountError(Exception):
+    pass
+
+
+class Account:
+    def __init__(self, AccNumber):
+        self.__AccNumber = AccNumber
+        self.__balance = 0
+
+    @property
+    def AccNumber(self):
+        return self.__AccNumber
+        
+    @property
+    def balance(self):
+        return self.__balance
+        
+    @balance.setter
+    def AccNumber(self, number):
+        raise AccountError('Not possible to change  the acount number')
+            
+    @balance.setter
+    def balance(self, amount):
+        if amount > 0:
+            self.__balance = amount
+        else:
+            raise AccountError('Not possible to set negative balance')
+            
+    def deposit(self,amount):
+        if amount > 100000:
+            print("depositing more than 100000")
+        self.__balance += amount
+        
+    def withdrawal(self,amount):
+        if amount > 100000:
+            print("withdrawing more than 100000")
+        self.__balance -= amount
+        
+    @level.deleter
+    def level(self):
+        if self.__balance == 0:
+            print('It is good to remember to delete the account!')
+            self.__balance = None
+            self.__AccNumber = None
+            
+        else:
+            raise AccountError('Not possible to delete as account with a positive value')
+
+# our_tank object has a capacity of 20 units
+our_tank = Tank(20)
+
+# our_tank's current liquid level is set to 10 units
+our_tank.level = 10
+print('Current liquid level:', our_tank.level)
+
+# adding additional 3 units (setting liquid level to 13)
+our_tank.level += 3
+print('Current liquid level:', our_tank.level)
+
+# let's try to set the current level to 21 units
+# this should be rejected as the tank's capacity is 20 units
+try:
+    our_tank.level = 21
+except TankError as e:
+    print('Trying to set liquid level to 21 units, result:', e)
+
+# similar example - let's try to add an additional 15 units
+# this should be rejected as the total capacity is 20 units
+try:
+    our_tank.level += 15
+except TankError as e:
+    print('Trying to add an additional 15 units, result:', e)
+
+# let's try to set the liquid level to a negative amount
+# this should be rejected as it is senseless
+try:
+    our_tank.level = -3
+except TankError as e:
+    print('Trying to set liquid level to -3 units, result:', e)
+
+print('Current liquid level:', our_tank.level)
+
+del our_tank.level
