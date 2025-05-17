@@ -50,14 +50,14 @@ Example of a Simple Decorator
 Here is a basic example of a decorator that prints a message before and after calling the original function:
 
 def decorator(func):
-def wrapper():
-print("Something is happening before the function is called.")
-func()
-print("Something is happening after the function is called.")
-return wrapper
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
 
 def say_whee():
-print("Whee!")
+    print("Whee!")
 
 say_whee = decorator(say_whee)
 say_whee()
@@ -73,11 +73,11 @@ Using the @ Symbol
 Python provides a more elegant way to apply decorators using the @ symbol. This is equivalent to the previous example but with cleaner syntax:
 
 def decorator(func):
-def wrapper():
-print("Something is happening before the function is called.")
-func()
-print("Something is happening after the function is called.")
-return wrapper
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
 
 @decorator
 def say_whee():
@@ -137,6 +137,8 @@ def percent(func):
         print("%" * 15)
     return wrapper
 
+#- percent wraps printer, adding % before and after it.
+#- star then wraps the modified printer, adding * before and after the percent decoration.
 @star
 @percent
 def printer(msg):
