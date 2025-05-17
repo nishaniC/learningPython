@@ -124,23 +124,23 @@ Multiple decorators can be applied to a single function by stacking them on top 
 Example
 
 def star(func):
-def wrapper(*args, **kwargs):
-print("*" * 15)
-func(*args, **kwargs)
-print("*" * 15)
-return wrapper
+    def wrapper(*args, **kwargs):
+        print("*" * 15)
+        func(*args, **kwargs)
+        print("*" * 15)
+    return wrapper
 
 def percent(func):
-def wrapper(*args, **kwargs):
-print("%" * 15)
-func(*args, **kwargs)
-print("%" * 15)
-return wrapper
+    def wrapper(*args, **kwargs):
+        print("%" * 15)
+        func(*args, **kwargs)
+        print("%" * 15)
+    return wrapper
 
 @star
 @percent
 def printer(msg):
-print(msg)
+    print(msg)
 
 printer("Hello")
 Output:
