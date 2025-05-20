@@ -119,8 +119,9 @@ Whoops! cannot divide
 None
 Chaining Decorators
 
-Multiple decorators can be applied to a single function by stacking them on top of each other. The decorators are applied from the bottom up.
-
+Multiple decorators can be applied to a single function by stacking them on top of each other. 
+The decorators are applied from the bottom up.
+the decorator nearest to the functions decorates it first then the ohter decorator decorates the decorated funcion
 Example
 
 def star(func):
