@@ -43,7 +43,15 @@ for check in check_list:
     except RocketNotReadyError as f:
         print('RocketNotReady exception: "{}", caused by "{}"'.format(f, f.__cause__))
 
-
+#out put 
+Final check procedure
+	The captain's name is John
+	The pilot's name is Mary
+	The mechanic's name is Mike
+RocketNotReady exception: "Crew is incomplete", caused by "list index out of range"
+RocketNotReady exception: "Problem with fuel gauge", caused by "division by zero"
+RocketNotReady exception: "Problem with batteries", caused by "division by zero"
+RocketNotReady exception: "Problem with circuits", caused by "division by zero"
 
 #  ----------------------------------------------------
 
