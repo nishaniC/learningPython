@@ -47,3 +47,34 @@ label_2.grid(column=0, row=1)
 label_3 = tk.Label(window, text="Quick brown fox jumps over the lazy dog", font=("Arial", "16", "bold"))
 label_3.grid(column=0, row=2)
 window.mainloop()
+#===========================================================================
+import tkinter as tk
+
+
+window = tk.Tk()
+button_1 = tk.Button(window, text="Ordinary button");
+button_1.pack()
+button_2 = tk.Button(window, text="Exceptional button")
+button_2.pack()
+
+button_2["highlightthickness"] = 10
+button_2["padx"] = 10
+button_2["pady"] = 5
+button_2["underline"] = 1
+button_2["borderwidth"] = 16
+#button_2["wraplength"] = 46
+#button_2["height"] = 7
+#button_2["width"] = 28
+
+window.mainloop()
+
+# Widget property name	Property role
+# borderwidth	        The width of the 3D-frame surrounding some widgets (e.g., Button)
+# highlightthickness	    The width of the additional frame drawn around the widget when it gains the focus
+# padx
+
+# pady	                The width/height of an additional empty space/margin around the widget
+# wraplength	            If the text filling the widget becomes longer than this property’s value, it will be wrapped (possibly more than once)
+# height	                The height of the widget
+# underline	            The index of the character inside the widget’s text, which should be presented as underlined or -1 otherwise (the underlined letter/digit can be used as a shortcut key, but it needs a specialized callback to work – no automation here, sorry)
+# width	                The width of the widget
