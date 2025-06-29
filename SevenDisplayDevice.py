@@ -1,0 +1,59 @@
+####Prints Verticaly#########
+one = "#\n#\n#\n#\n#"
+two="###\n  #\n###\n#  \n###"
+three = "###\n  #\n###\n  #\n###"
+four = "# #\n# #\n###\n  #\n  #"
+five = "###\n#  \n###\n  #\n###"
+six = "###\n#  \n###\n# #\n###"
+seven = "###\n  #\n  #\n  #\n  #"
+eight = "###\n# #\n###\n# #\n###"
+nine = "###\n# #\n###\n  #\n###"
+zero = "###\n# #\n# #\n# #\n###"
+
+patterns = [zero,one,two,three,four,five,six,seven,eight,nine]
+ 
+# print(patterns[0],patterns[1])
+# print(patterns[1],"\n")
+# print(patterns[2],"\n")
+# print(patterns[3],"\n")
+# print(patterns[4],"\n")
+# print(patterns[5],"\n")
+# print(patterns[6],"\n")
+# print(patterns[7],"\n")
+# print(patterns[8],"\n")
+# print(patterns[9],"\n")
+
+customerInput = input("please input the numbers you want printed in a seven-display device: ")
+for ch in customerInput:
+    number = int(ch)
+    print (patterns[number], "\n")
+    
+
+####Prints Horizontaly#########
+representations = {
+    '0': ('###', '# #', '# #', '# #', '###'),
+    '1': ('  #', '  #', '  #', '  #', '  #'),
+    '2': ('###', '  #', '###', '#  ', '###'),
+    '3': ('###', '  #', '###', '  #', '###'),
+    '4': ('# #', '# #', '###', '  #', '  #'),
+    '5': ('###', '#  ', '###', '  #', '###'),
+    '6': ('###', '#  ', '###', '# #', '###'),
+    '7': ('###', '  #', '  #', '  #', '  #'),
+    '8': ('###', '# #', '###', '# #', '###'),
+    '9': ('###', '# #', '###', '  #', '###'),
+    '.': ('   ', '   ', '   ', '   ', '  #'),
+}
+print("representations: ", representations, "\n")
+
+def seven_segment(number):
+    # treat the number as a string, since that makes it easier to deal with
+    # on a digit-by-digit basis
+    digits = [representations[digit] for digit in number]
+    print("digits: ", digits, "\n")
+    # now digits is a list of 5-tuples, each representing a digit in the given number
+    # We'll print the first lines of each digit, the second lines of each digit, etc.
+    for i in range(5):
+        print("  ".join(segment[i] for segment in digits))
+    
+customerInput = input("please input the numbers you want printed in a seven-display device: ")
+seven_segment(customerInput)
