@@ -42,7 +42,7 @@ def digits_only2(*args):
     if string == '' or string.isdigit() and len(entry2.get())<6:  # Field's content is valid.
         last_string2 = string
     else:
-        text.set(last_string2)
+        text2.set(last_string2)
 
 def command_1():
     radio_1_var.set(radio_1_var.get())
