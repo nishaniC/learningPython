@@ -6,8 +6,13 @@ window.title("      Calculator             ")
 
 
 def click():
-    if entry.get() == "" or entry2.get() == "":
-        tk.messagebox.showerror("Error", "Please enter two numbers")
+    if entry.get() == "" :
+        tk.messagebox.showerror("Error", "Please enter number1")
+        entry.focus_set()
+        return
+    if entry2.get() == "":
+        tk.messagebox.showerror("Error", "Please enter two number2")
+        entry2.focus_set()
         return
     number1=int(entry.get())
     number2=int(entry2.get())
@@ -24,6 +29,8 @@ def click():
             calculatednum = number1 / number2
         else:
             tk.messagebox.showerror("Error", "number2 cannot be zero")
+            text2.set('')
+            entry2.focus_set()
             return
 
     tk.messagebox.showinfo("Click!", str(calculatednum))
