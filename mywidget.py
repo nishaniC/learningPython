@@ -82,7 +82,7 @@ window.mainloop()
 import tkinter as tk
 
 window = tk.Tk()
-button_1 = tk.Button(window, text="Ordinary button");
+button_1 = tk.Button(window, text="Ordinary button")
 button_1.pack()
 button_2 = tk.Button(window, text="Colorful button")
 button_2.pack()
