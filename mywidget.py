@@ -102,7 +102,8 @@ window.mainloop()
 #activeforeground
 
 # activebackground	    Like bg and fg but used when the widget becomes active
-# disabledforeground	The width of the widget
+# disabledforeground
+# width                 The width of the widget:- width=10 means the button is wide enough to fit roughly 10 characters of the current font.
 #==========================================================================
 import tkinter as tk
 
