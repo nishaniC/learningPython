@@ -38,3 +38,5 @@ variable.set(variable.get() + 'e')
 variable.trace_remove("write", w_obsid)
 variable.set(variable.get() + 'f')
 print(variable.get())
+
+# This is a built-in way to observe variable changes in GUI apps.

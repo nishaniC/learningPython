@@ -14,7 +14,7 @@ def blink():
     print(number)
     event_id = frame.after(1500, blink)
     if number == 10:
-        frame.after_cancel(event_id)
+        frame.after_cancel(event_id) #this stops blink from happening
         window.destroy()
 
 
