@@ -32,6 +32,7 @@ canvas.create_oval(40, 40, 140, 140, outline='orange', width=20, fill='white')
 # Option name	Option meaning
 # style	        can be set to one of the following: PIESLICE (default)(A filled wedge shape, like slicing into a pie),
 #               CHORD(A filled shape bordered by the arc and a straight line between start/end.) and ARC(Just the outline curve of the arc. No fill, no connecting lines.);
+#               this mean that create_arc() can display an arc in 3 shapes
 # start	        the angle (in degrees) of the arc’s start relative to the X-axis (e.g., 90 means the highest point of the ellipse, while 0 is the right-most point. The default is 0)
 #               - Where the arc begins, in degrees, measured from the positive X-axis (3 o’clock position).
 #               - 0° is right
