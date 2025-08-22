@@ -39,7 +39,8 @@ sock.connect((server_addr, 80))
 # Connection: close\r\n
 # \r\n
 # The GET method requires:
-# a line containing the method name (i.e., GET) followed by the name of the resource the client wants to receive; the root document is specified as a single slash (i.e., /); the line must also include the HTTP protocol version (i.e., HTTP/1.1) and must end with the characters \r\n; note: all lines must end the same way;
+# a line containing the method name (i.e., GET) followed by the name of the resource the client wants to receive; the root document is specified as a single slash (i.e., /);
+# the line must also include the HTTP protocol version (i.e., HTTP/1.1) and must end with the characters \r\n; note: all lines must end the same way;
 # a line containing the name of the site (e.g., www.site.com) preceded by the parameter name (i.e., Host:)
 # a line containing a parameter named Connection: along with its value close, which forces the server to close the connection after the first request is served; it will simplify our client's code;
 # an empty line is a request terminator.
@@ -52,11 +53,14 @@ sock.connect((server_addr, 80))
 #
 # The action performed by the send() method is extremely complicated - it engages not only many layers of the OS, but also lots of network equipment deployed
 # on the route between the client and server, and obviously the server itself.
-# The send() method doesn't natively accept strings - this is why we have to use the b prefix before the literal parts of the request string (it silently translates the string into bytes - an immutable vector consisting of values from the range 0..255, which send() likes most) and this is also why we should invoke bytes() to translate the string variable in the same manner.
+# The send() method doesn't natively accept strings - this is why we have to use the b prefix before the literal parts of the request string
+# (it silently translates the string into bytes - an immutable vector consisting of values from the range 0..255, which send() likes most)
+# and this is also why we should invoke bytes() to translate the string variable in the same manner.
 #
 # Note: the bytes' second argument specifies the encoding used to store the server's name. UTF8 seems to be the best choice for most modern OSs.
 #
-# The action performed by the send() method is extremely complicated - it engages not only many layers of the OS, but also lots of network equipment deployed on the route between the client and server, and obviously the server itself.
+# The action performed by the send() method is extremely complicated - it engages not only many layers of the OS, but also lots of network equipment deployed on the route between the client and server,
+# and obviously the server itself.
 sock.send(b"GET / HTTP/1.1\r\nHost: " +
           bytes(server_addr, "utf8") +
           b"\r\nConnection: close\r\n\r\n")
