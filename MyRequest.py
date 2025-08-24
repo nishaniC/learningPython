@@ -32,7 +32,7 @@ print("reply.headers['Content-Type']: ",reply.headers['Content-Type'])
 
 # The raw response's contents are stored by the text property:
 print("reply.text: ",reply.text)
-# HTTP method GET is used to transfer a resource from client to the server
+# HTTP method GET is used to transfer a resource from server to the client
 # HTTP method PUT is used to transfer a resource from client to the server, the resource being sent is intended to replace the previously stored data
 # HTTP method DELETE is used to order the server to remove a resource from a given identification; the resource is unavailable from then on
 # the other HTTP methods are HEAD,CONNECT,OPTIONS,TRACE
