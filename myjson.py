@@ -22,7 +22,8 @@ print(json.dumps(my_dict))
 # {"me": "Python", "pi": 3.141592653589, "data": [1, 2, 4, 8], "set": null}
 
 #  You cannot just dump the content of an object
-# There are at least two options we can make use of. The first of them is based on the fact that we can substitute the function dumps() uses to obtain a textual representation of its argument. There are two steps to take:
+# There are at least two options we can make use of. The first of them is based on the fact that we can substitute the function dumps()
+# uses to obtain a textual representation of its argument. There are two steps to take:
 #
 # write your own function knowing how to handle your objects;
 # make dumps() aware of it by setting the keyword argument named default;
@@ -59,7 +60,7 @@ print(json.dumps(some_man, default=encode_who))
 #
 # The second approach is based on the fact that the serialization is actually done by the method named default(), which is a part of the json.JSONEncoder class.
 # It gives you the opportunity to overload the method defining a JSONEncoder's subclass and to pass it into dumps()
-# using the keyword argument named cls – just like in the code we've provided in the editor.
+# using the keyword argument named cls –
 
 # As you can see, we are released from the obligation to raise any exceptions.
 import json
@@ -97,7 +98,7 @@ print(electron)
 # <class 'float'>
 # 16021766189.98
 
-# double backslashes inside the jstr is necessary. are, as we have to deliver an exact JSON string into the loads().
+# double backslashes inside the jstr is necessary. as we have to deliver an exact JSON string into the loads().
 # This means that the backslash must precede all quotes existing within the string.
 # Removing any of them will make the string invalid and loads() will not like it for sure.
 jstr = '"\\"The Meaning of Life\\" by Monty Python\'s Flying Circus"'
@@ -134,10 +135,14 @@ json_str = json.dumps(old_man, default=encode_who)
 # As you can see, there’s a keyword argument name object_hook, which is used to point to the function responsible for creating
 # a brand new object of a needed class and for filling it with actual data.
 # Note: the function, specified by the object_hook will be invoked only when the JSON string describes a JSON object. Sorry, there are no exceptions to this rule.
-# there won’t be an error if the JSON string isn’t an object. Python’s json.loads() will still parse the string just fine; it simply won’t call your object_hook because there’s no object to hook into.
+# there won’t be an error if the JSON string isn’t an object. Python’s json.loads() will still parse the string just fine;
+# it simply won’t call your object_hook because there’s no object to hook into.
 new_man = json.loads(json_str, object_hook=decode_who)
 print(type(new_man))
 print(new_man.__dict__)
+# <class '__main__.Who'>
+# {'name': 'Jane Doe', 'age': 23}
+
 # As previously, a purer object approach is also possible, and is based on redefining the JSONDecoder class.
 # Unfortunately, this variant is more complicated than its encoding counterpart.
 # We don't need to rewrite any method, but we do have to redefine the superclass constructor, which makes our job a little more painstaking.
@@ -155,7 +160,14 @@ new_man = json.loads(json_str, cls=MyDecoder)
 
 print(type(new_man))
 print(new_man.__dict__)
+# <class '__main__.Who'>
+# {'name': 'Jane Doe', 'age': 23}
 
 # If you want to deserialize a list of custom objects, you can do something like this:
 json_str = '[{"name": "Jane", "age": 23}, {"name": "John", "age": 30}]'
 people = json.loads(json_str, object_hook=decode_who)
+
+print(type(people))
+print(people)
+# <class 'list'>
+# [<__main__.Who object at 0x000002A691581C70>, <__main__.Who object at 0x000002A6914318C0>]
