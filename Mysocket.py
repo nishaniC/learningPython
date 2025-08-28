@@ -29,6 +29,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Any Internet browser will try to connect to port number 80 by default, so we do it, too.
 # If something goes wrong, the connect() method (and any other method whose results may be unsuccessful) raises an exception(socket.gaierror( this means get address info error),
 # ConnectionRefusedError ,socket.timeout).
+# double parentheses used here is necessary as the invocation's argument is a tuple
 sock.connect((server_addr, 80))
 
 # A conversation with the HTTP server consists of requests (sent by the client) and responses (sent by the server).
@@ -66,7 +67,7 @@ sock.send(b"GET / HTTP/1.1\r\nHost: " +
           b"\r\nConnection: close\r\n\r\n")
 
 # The recv() method waits for the server's response, gets it, and puts it inside a newly created object of type bytes
-# The argument specifies the maximal acceptable length of the data to be received. If the server's response is longer than this limit, it will remain unreceived.
+# The argument specifies the maximal acceptable length of the data to be received(this is the length of the recv's internal buffer. If the server's response is longer than this limit, it will remain unreceived.
 # You will need to invoke recv() again (maybe more than once) to get the remaining part of the data. It's a general practice to invoke recv() as long as it returns some data.
 reply = sock.recv(10000)
 

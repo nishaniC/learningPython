@@ -1,7 +1,7 @@
 import requests
 
 
-# to start the server type this in cmd , cars.json has to be the complete path:
+# to start the server, type this in cmd , cars.json has to be the complete path:
 # json-server --watch D:\e845c414d155078681778a99015e9fcff1f0c84d\cars.json
 key_names = ["id", "brand", "model", "production_year", "convertible"]
 key_widths = [10, 15, 10, 20, 15]
@@ -53,7 +53,7 @@ try:
 # http://server:port/resource?_sort=property&_order=desc
 #
 # Note the & character – it separates additional request parameters from each other. this didn't work for me so added the client side sorting line 65-66
-    reply = requests.get('http://localhost:3000/cars?_sort=production_year&_order=desc')
+    reply = requests.get('http://localhost:3000/cars?_sort=production_ye ar&_order=desc')
 except requests.RequestException:
     print("Communication error")
 else:
@@ -73,7 +73,8 @@ else:
     else:
         print("Server error")
 # json-server assumes that the data collection inherits its name from the source data file name. As we named the file cars, the server will publish the data as cars, too.
-# You have to use the name in the URI unless you want to get the default (root) document, which is completely useless to us.
+# You have to use the name in the URI unless you want to get the default
+# (root) document, which is completely useless to us.
 
 # Note (very important) – the fact that the json-server serves the data initially encoded as JSON has absolutely nothing to do with the fact that we will
 # transmit JSON messages between the client (our code) and the server (json-server). The way the server is used to initialize and store data is actually a
