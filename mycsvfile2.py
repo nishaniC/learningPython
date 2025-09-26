@@ -15,7 +15,6 @@ class Phone:
                 Phone.contacts.append(PhoneContact(row['Name'], row['Phone']))
 
     def search_contacts(self,search_phrase):
-
         found = False
         for contact in Phone.contacts:
             if (search_phrase.lower() in contact.name.lower()) or (search_phrase in contact.phone):
